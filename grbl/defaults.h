@@ -522,11 +522,11 @@
   #define DEFAULT_INVERT_PROBE_PIN 0 // false
   #define DEFAULT_LASER_MODE 1 // false
   #define DEFAULT_HOMING_ENABLE 1  // false
-  #define DEFAULT_HOMING_DIR_MASK 7 // move positive dir
+  #define DEFAULT_HOMING_DIR_MASK 3 // move positive dir
   #define DEFAULT_HOMING_FEED_RATE 2000.0 // mm/min
   #define DEFAULT_HOMING_SEEK_RATE 2000.0 // mm/min
   #define DEFAULT_HOMING_DEBOUNCE_DELAY 0 // msec (0-65k)
-  #define DEFAULT_HOMING_PULLOFF 2.0 // mm
+  #define DEFAULT_HOMING_PULLOFF -2.0 // mm
 #endif
 
 #endif
