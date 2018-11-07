@@ -27,14 +27,15 @@
 
 #ifndef config_h
 #define config_h
-#include "grbl.h" // For Arduino IDE compatibility.
+//#include "grbl.h" // For Arduino IDE compatibility.
 
 
 // Define CPU pin map and default settings.
 // NOTE: OEMs can avoid the need to maintain/update the defaults.h and cpu_map.h files and use only
 // one configuration file by placing their specific defaults and pin map at the bottom of this file.
 // If doing so, simply comment out these two defines and see instructions below.
-#define DEFAULTS_GENERIC
+#define DEFAULTS_RAION_CNC
+//#define DEFAULTS_GENERIC
 #define CPU_MAP_ATMEGA328P // Arduino Uno CPU
 
 // Serial baud rate
@@ -102,8 +103,8 @@
 // on separate pin, but homed in one cycle. Also, it should be noted that the function of hard limits
 // will not be affected by pin sharing.
 // NOTE: Defaults are set for a traditional 3-axis CNC machine. Z-axis first to clear, followed by X & Y.
-#define HOMING_CYCLE_0 (1<<Z_AXIS)                // REQUIRED: First move Z to clear workspace.
-#define HOMING_CYCLE_1 ((1<<X_AXIS)|(1<<Y_AXIS))  // OPTIONAL: Then move X,Y at the same time.
+//#define HOMING_CYCLE_0 (1<<Z_AXIS)                // REQUIRED: First move Z to clear workspace.
+#define HOMING_CYCLE_0 ((1<<X_AXIS)|(1<<Y_AXIS)|(1<<Z_AXIS))  // OPTIONAL: Then move X,Y at the same time.
 // #define HOMING_CYCLE_2                         // OPTIONAL: Uncomment and add axes mask to enable
 
 // NOTE: The following are two examples to setup homing for 2-axis machines.
@@ -193,7 +194,7 @@
 // NOTE: The top option will mask and invert all control pins. The bottom option is an example of
 // inverting only two control pins, the safety door and reset. See cpu_map.h for other bit definitions.
 // #define INVERT_CONTROL_PIN_MASK CONTROL_MASK // Default disabled. Uncomment to disable.
-// #define INVERT_CONTROL_PIN_MASK ((1<<CONTROL_SAFETY_DOOR_BIT)|(1<<CONTROL_RESET_BIT)) // Default disabled.
+// #define INVERT_CONTROL_PIN_MASK ((1<<CONTROL_SAFETY_DOOR_BIT)|(CONTROL_RESET_BIT)) // Default disabled.
 
 // Inverts select limit pin states based on the following mask. This effects all limit pin functions,
 // such as hard limits and homing. However, this is different from overall invert limits setting.
