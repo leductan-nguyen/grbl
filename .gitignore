@@ -4,11 +4,5 @@
 *.DS_Store
 *.d
 
-README.md
-grbl/.vscode/ipch/ef637cbd76e85a64/mmap_address.bin
-grbl/.vscode/ipch/27ddbfa885bd8119/mmap_address.bin
-.vscode/c_cpp_properties.json
-.vscode/extensions.json
-.vscode/launch.json
-.vscode/settings.json
-grbl/.vscode/ipch/27ddbfa885bd8119/GRBL.ipch
+grbl/.vscode/*
+.vscode/*
